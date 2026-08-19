@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Match Layout</title>
+  <style>
+    :root {
+      --purple: #3200ff;
+      --orange: #fb6346;
+      --yellow: #ffd700;
+      --blue: #52afe6;
+      --pink: #e65aac;
+      --green: #98e587;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 22px;
+      background: #ffffff;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #111111;
+    }
+
+    .layout {
+      width: 100%;
+      max-width: 1278px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: 73px 54px 534px 55px;
+    }
+
+    .top-link,
+    .header,
+    .footer,
+    .aside,
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .top-link {
+      background: var(--purple);
+      color: #ffffff;
+      font-size: 1.55rem;
+      text-decoration: none;
+    }
+
+    .header {
+      background: var(--orange);
+      font-size: 1.05rem;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 218px 1fr 218px;
+    }
+
+    .aside {
+      align-items: flex-start;
+      font-size: 1rem;
+      padding-top: 16px;
+    }
+
+    .aside-left {
+      background: var(--yellow);
+    }
+
+    .aside-right {
+      background: var(--pink);
+    }
+
+    .main {
+      background: var(--blue);
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 68px 44px 0 44px;
+    }
+
+    .main p {
+      margin: 0;
+      max-width: 690px;
+      font-size: 1.32rem;
+      line-height: 1.12;
+      font-weight: 700;
+    }
+
+    .footer {
+      background: var(--green);
+      font-size: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 12px;
+      }
+
+      .layout {
+        grid-template-rows: auto auto auto auto;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .aside,
+      .main {
+        min-height: 180px;
+      }
+
+      .main {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <a class="top-link" href="#">Link</a>
+    <header class="header">Header</header>
+
+    <div class="content">
+      <aside class="aside aside-left">Aside 1</aside>
+
+      <main class="main">
+        <p>
+          The desert sky was blood red. She held on tight, as we sped, through the
+          Valley of the Dead Vultures, into an underworld of sub-culture.
+        </p>
+      </main>
+
+      <aside class="aside aside-right">Aside 2</aside>
+    </div>
+
+    <footer class="footer">Footer</footer>
+  </div>
+</body>
+</html>
